@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Experience - Portfolio</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* Header Section */
+    .header-section {
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .header-section h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .header-section h1 span {
+      color: #00bcd4;
+    }
+
+    .header-section .subtitle {
+      color: #8b949e;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 40px 0 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #21262d;
+    }
+
+    /* Experience Card */
+    .experience-card {
+      background: linear-gradient(135deg, #1a1d23 0%, #2a2d35 100%);
+      border: 1px solid #3a3d45;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      pointer-events: none;
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .experience-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .company-icon {
+      background: #00bcd4;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 24px;
+      color: white;
+      min-width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .job-details {
+      flex: 1;
+    }
+
+    .job-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .company-name {
+      color: #8b949e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: #8b949e;
+      align-items: center;
+    }
+
+    .job-meta i {
+      margin-right: 6px;
+      color: #00bcd4;
+    }
+
+    .experience-right {
+      text-align: right;
+    }
+
+    .status-badge {
+      background: #00bcd4;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .job-type {
+      color: #8b949e;
+      font-size: 14px;
+    }
+
+    .job-description {
+      color: #c9d1d9;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 24px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Key Achievements Section */
+    .achievements-section {
+      margin: 24px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #00bcd4;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .achievements-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: #c9d1d9;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .achievements-list li::before {
+      content: '•';
+      color: #00bcd4;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: -2px;
+    }
+
+    /* Technologies Section */
+    .technologies-section {
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .technologies-title {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech-tag {
+      background: #21262d;
+      color: #c9d1d9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .company-link {
+      background: rgba(8, 145, 178, 0.1);
+      border: 1px solid #00bcd4;
+      color: #00bcd4;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .company-link:hover {
+      background: rgba(8, 145, 178, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      nav ul li a {
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+
+      .header-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .experience-right {
+        text-align: left;
+      }
+
+      .job-meta {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .header-section {
+        padding: 0 15px;
+      }
+
+      .experience-card {
+        padding: 20px;
+      }
+
+      .header-section h1 {
+        font-size: 1.9rem;
+      }
+
+      .job-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html" class="active"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <h1>Work <span>Experience</span></h1>
+    <p class="subtitle">Professional journey and hands-on experience in software development and technology</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <!-- Current Position -->
+    <div class="experience-card">
+      <div class="experience-header">
+        <div class="experience-left">
+          <div class="company-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="job-details">
+            <h3 class="job-title">Full Stack Developer Intern</h3>
+            <div class="company-name">TechCorp Solutions</div>
+            <div class="job-meta">
+              <span><i class="fas fa-calendar"></i>June 2024 - Present</span>
+              <span><i class="fas fa-map-marker-alt"></i>San Francisco, CA</span>
+              <span><i class="fas fa-users"></i>Team of 12</span>
+            </div>
+          </div>
+        </div>
+        <div class="experience-right">
+          <div class="status-badge">Current</div>
+          <div class="job-type">Internship</div>
+        </div>
+      </div>
+
+      <div class="job-description">
+        Developing and maintaining web applications using React, Node.js, and PostgreSQL. Collaborating with senior
+        developers on client projects and contributing to agile development processes.
+      </div>
+
+      <div class="achievements-section">
+        <div class="achievements-title">
+          <i class="fas fa-chart-line"></i>
+          Key Achievements
+        </div>
+        <ul class="achievements-list">
+          <li>Reduced application load time by 40% through code optimization</li>
+          <li>Implemented responsive design for mobile compatibility</li>
+          <li>Contributed to 3 client projects with 100% on-time delivery</li>
+          <li>Mentored 2 junior interns in web development best practices</li>
+        </ul>
+      </div>
+
+      <div class="technologies-section">
+        <div class="technologies-title">Technologies Used</div>
+        <div class="tech-tags">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Git</span>
+        </div>
+        <a href="#" class="company-link">
+          <i class="fas fa-external-link-alt"></i>
+          View Company
+        </a>
+      </div>
+    </div>
+
+    <!-- Previous Position -->
+    <div class="experience-card">
+      <div class="experience-header">
+        <div class="experience-left">
+          <div class="company-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="job-details">
+            <h3 class="job-title">Frontend Developer</h3>
+            <div class="company-name">Digital Innovations Inc.</div>
+            <div class="job-meta">
+              <span><i class="fas fa-calendar"></i>Jan 2024 - May 2024</span>
+              <span><i class="fas fa-map-marker-alt"></i>Remote</span>
+              <span><i class="fas fa-users"></i>Team of 8</span>
+            </div>
+          </div>
+        </div>
+        <div class="experience-right">
+          <div class="status-badge" style="background: #6c757d;">Completed</div>
+          <div class="job-type">Part-time</div>
+        </div>
+      </div>
+
+      <div class="job-description">
+        Focused on building responsive user interfaces and improving user experience across multiple client projects.
+        Worked closely with UX designers to implement pixel-perfect designs.
+      </div>
+
+      <div class="achievements-section">
+        <div class="achievements-title">
+          <i class="fas fa-chart-line"></i>
+          Key Achievements
+        </div>
+        <ul class="achievements-list">
+          <li>Increased user engagement by 35% through UI/UX improvements</li>
+          <li>Built reusable component library used across 5+ projects</li>
+          <li>Optimized website performance achieving 95+ Lighthouse scores</li>
+          <li>Successfully delivered 4 major client projects on schedule</li>
+        </ul>
+      </div>
+
+      <div class="technologies-section">
+        <div class="technologies-title">Technologies Used</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Vue.js</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Sass</span>
+          <span class="tech-tag">Webpack</span>
+          <span class="tech-tag">Figma</span>
+          <span class="tech-tag">Jest</span>
+        </div>
+        <a href="#" class="company-link">
+          <i class="fas fa-external-link-alt"></i>
+          View Company
+        </a>
+      </div>
+    </div>
+
+    <!-- Freelance Experience -->
+    <div class="experience-card">
+      <div class="experience-header">
+        <div class="experience-left">
+          <div class="company-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="job-details">
+            <h3 class="job-title">Freelance Web Developer</h3>
+            <div class="company-name">Self-Employed</div>
+            <div class="job-meta">
+              <span><i class="fas fa-calendar"></i>Sep 2023 - Dec 2023</span>
+              <span><i class="fas fa-map-marker-alt"></i>Remote</span>
+              <span><i class="fas fa-users"></i>Various Clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="experience-right">
+          <div class="status-badge" style="background: #6c757d;">Completed</div>
+          <div class="job-type">Freelance</div>
+        </div>
+      </div>
+
+      <div class="job-description">
+        Provided web development services to small businesses and startups, creating custom websites and web
+        applications tailored to client needs and business objectives.
+      </div>
+
+      <div class="achievements-section">
+        <div class="achievements-title">
+          <i class="fas fa-chart-line"></i>
+          Key Achievements
+        </div>
+        <ul class="achievements-list">
+          <li>Completed 8 successful projects with 100% client satisfaction</li>
+          <li>Increased client website traffic by average of 60%</li>
+          <li>Developed e-commerce solutions generating $50K+ in sales</li>
+          <li>Built long-term relationships with 5 recurring clients</li>
+        </ul>
+      </div>
+
+      <div class="technologies-section">
+        <div class="technologies-title">Technologies Used</div>
+        <div class="tech-tags">
+          <span class="tech-tag">WordPress</span>
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">cPanel</span>
+        </div>
+        <a href="#" class="company-link">
+          <i class="fas fa-external-link-alt"></i>
+          View Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

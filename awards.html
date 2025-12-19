@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awards & Recognition - Portfolio</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* Header Section */
+    .header-section {
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .header-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .header-section h1 span {
+      color: #00bcd4;
+    }
+
+    .header-section .subtitle {
+      color: #8b949e;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #58a6ff;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      font-size: 24px;
+    }
+
+    /* Award Card */
+    .award-card {
+      background: linear-gradient(135deg, #1a1d23 0%, #2a2d35 100%);
+      border: 1px solid #3a3d45;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      pointer-events: none;
+    }
+
+    .award-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .award-title-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .trophy-icon {
+      font-size: 32px;
+      margin-top: 4px;
+    }
+
+    .title-content {
+      flex: 1;
+    }
+
+    .award-title {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .department {
+      color: #9ca3af;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .badge {
+      background: #0891b2;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .date {
+      color: #9ca3af;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    /* Award details */
+    .award-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .detail-icon {
+      color: #0891b2;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    .detail-label {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .detail-value {
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* Button */
+    .view-certificate-btn {
+      background: rgba(8, 145, 178, 0.1);
+      border: 1px solid #0891b2;
+      color: #0891b2;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .view-certificate-btn:hover {
+      background: rgba(8, 145, 178, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* Competitions Section */
+    .competitions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .competition-card {
+      background: linear-gradient(135deg, #1a1d23 0%, #2a2d35 100%);
+      border: 1px solid #3a3d45;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .competition-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .competition-card i {
+      font-size: 30px;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .competition-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .competition-card .year {
+      background: #21262d;
+      color: #c9d1d9;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .competition-card h3 {
+      font-size: 20px;
+      color: #00bcd4;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .competition-card p {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      nav ul li a {
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+
+      .header-section h1 {
+        font-size: 2rem;
+      }
+
+      .header-section .subtitle {
+        font-size: 1rem;
+      }
+
+      .award-header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .award-title {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .competition-card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 8px 15px;
+      }
+
+      nav ul li a {
+        padding: 5px 8px;
+        font-size: 13px;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+
+      .header-section {
+        padding: 0 15px;
+      }
+
+      .award-card {
+        padding: 20px;
+      }
+
+      .header-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .header-section .subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html" class="active"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <h1>Awards & <span>Recognition</span></h1>
+    <p class="subtitle">Honors and achievements recognizing excellence in academics, innovation, and community
+      contributions</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2 class="section-title">
+      <i class="fas fa-trophy"></i>
+      Major Awards & Honors
+    </h2>
+
+    <!-- Outstanding Achievement Award 1 -->
+    <div class="award-card">
+      <div class="award-header">
+        <div class="award-title-section">
+          <div class="trophy-icon">🏆</div>
+          <div class="title-content">
+            <h3 class="award-title">Outstanding Student Achievement Award</h3>
+            <div class="department">University Computer Science Department</div>
+            <p class="description">Recognized for exceptional academic performance and significant contributions to
+              research projects in computer science.</p>
+          </div>
+        </div>
+        <div>
+          <div class="badge">University</div>
+          <div class="date">May 2024</div>
+        </div>
+      </div>
+
+      <div class="award-details">
+        <div class="detail-item">
+          <div class="detail-icon">🏷️</div>
+          <div>
+            <div class="detail-label">Category:</div>
+            <div class="detail-value">Academic Excellence</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">🏆</div>
+          <div>
+            <div class="detail-label">Recognition:</div>
+            <div class="detail-value">$2,500 scholarship</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">⭐</div>
+          <div>
+            <div class="detail-label">Criteria:</div>
+            <div class="detail-value">Top 5% of graduating class with research contributions</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">📅</div>
+          <div>
+            <div class="detail-label">Received:</div>
+            <div class="detail-value">May 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="view-certificate-btn">
+        <i class="fas fa-file-alt"></i>
+        View Certificate
+      </a>
+    </div>
+
+    <!-- Dean's List Award -->
+    <div class="award-card">
+      <div class="award-header">
+        <div class="award-title-section">
+          <div class="trophy-icon">🎖️</div>
+          <div class="title-content">
+            <h3 class="award-title">Dean's List Honor</h3>
+            <div class="department">College of Engineering</div>
+            <p class="description">Consistently maintained exceptional academic performance throughout multiple
+              semesters with GPA above 3.75.</p>
+          </div>
+        </div>
+        <div>
+          <div class="badge">Academic</div>
+          <div class="date">Dec 2023</div>
+        </div>
+      </div>
+
+      <div class="award-details">
+        <div class="detail-item">
+          <div class="detail-icon">🏷️</div>
+          <div>
+            <div class="detail-label">Category:</div>
+            <div class="detail-value">Academic Achievement</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">📊</div>
+          <div>
+            <div class="detail-label">GPA Requirement:</div>
+            <div class="detail-value">3.75 or higher</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">⭐</div>
+          <div>
+            <div class="detail-label">Duration:</div>
+            <div class="detail-value">3 consecutive semesters</div>
+          </div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-icon">📅</div>
+          <div>
+            <div class="detail-label">Received:</div>
+            <div class="detail-value">December 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="view-certificate-btn">
+        <i class="fas fa-file-alt"></i>
+        View Certificate
+      </a>
+    </div>
+
+    <!-- Programming Competitions Section -->
+    <h2 class="section-title">
+      <i class="fas fa-code"></i>
+      Programming Competitions
+    </h2>
+
+    <div class="competitions">
+      <div class="competition-card">
+        <i class="fas fa-trophy"></i>
+        <h4>International Collegiate Programming Contest</h4>
+        <span class="year">2024</span>
+        <h3>15th Place</h3>
+        <p>Final Position</p>
+        <p><i class="fas fa-users"></i> 3000+ teams worldwide</p>
+      </div>
+
+      <div class="competition-card">
+        <i class="fas fa-trophy"></i>
+        <h4>Google Code Jam</h4>
+        <span class="year">2023</span>
+        <h3>Round 2 Qualifier</h3>
+        <p>Final Position</p>
+        <p><i class="fas fa-users"></i> 25,000+ participants</p>
+      </div>
+
+      <div class="competition-card">
+        <i class="fas fa-trophy"></i>
+        <h4>Meta Hacker Cup</h4>
+        <span class="year">2023</span>
+        <h3>Round 1 Finalist</h3>
+        <p>Final Position</p>
+        <p><i class="fas fa-users"></i> 15,000+ participants</p>
+      </div>
+
+      <div class="competition-card">
+        <i class="fas fa-medal"></i>
+        <h4>CodeChef Long Challenge</h4>
+        <span class="year">2023</span>
+        <h3>Top 100</h3>
+        <p>Global Ranking</p>
+        <p><i class="fas fa-users"></i> 50,000+ participants</p>
+      </div>
+
+      <div class="competition-card">
+        <i class="fas fa-award"></i>
+        <h4>AtCoder Beginner Contest</h4>
+        <span class="year">2023</span>
+        <h3>Winner</h3>
+        <p>1st Place</p>
+        <p><i class="fas fa-users"></i> 8,000+ participants</p>
+      </div>
+
+      <div class="competition-card">
+        <i class="fas fa-star"></i>
+        <h4>Codeforces Round</h4>
+        <span class="year">2022</span>
+        <h3>Top 50</h3>
+        <p>Div. 2 Contest</p>
+        <p><i class="fas fa-users"></i> 20,000+ participants</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

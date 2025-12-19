@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - About Me</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 1300px;
+      margin: 15px auto;
+      padding: 0 20px;
+    }
+
+    .about-section h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .about-section h1 span {
+      color: #00bcd4;
+    }
+
+    .about-section p.subtitle {
+      color: #8b949e;
+      margin-bottom: 50px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .about-stats {
+      flex: 1 1 400px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+    }
+
+    .stat-card {
+      background: #161b22;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #21262d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 200px;
+      /* Minimum height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    }
+
+    .stat-card i {
+      font-size: 36px;
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      font-size: 1rem;
+      color: #c9d1d9;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .stat-card {
+        padding: 40px 15px;
+        min-height: 160px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .about-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        width: 100%;
+      }
+
+      .stat-card {
+        padding: 30px 15px;
+        min-height: 140px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .stat-card {
+        padding: 25px 10px;
+        min-height: 120px;
+      }
+
+      .stat-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .stat-card i {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h1>About <span>Me</span></h1>
+    <p class="subtitle">Dedicated to creating innovative solutions through code and continuous learning</p>
+
+    <div class="about-content">
+      <!-- Left side -->
+      <div class="about-text">
+        <h2>My Journey</h2>
+        <p>
+          As a Computer Science & Engineering student, my journey into Artificial Intelligence began with a fascination
+          for how machines can learn and adapt. I was captivated by the idea of teaching computers to recognize
+          patterns,
+          make decisions, and solve problems—abilities that have the potential to transform industries and everyday
+          life.
+        </p>
+        <p>
+          Through coursework, hands-on projects, and exploring real-world applications, I have developed a solid
+          foundation
+          in AI, machine learning, and full-stack development. Each project and experience has honed my technical skills
+          and
+          strengthened my vision of creating innovative, impactful solutions as an AI Engineer.
+        </p>
+
+        <h2>What Drives Me</h2>
+        <p>
+          I am driven by curiosity, continuous learning, and the desire to solve meaningful problems using AI. The
+          challenge of
+          turning data into insights and ideas into intelligent systems motivates me every day. I aim to build
+          applications that
+          not only leverage technology creatively but also make a tangible difference in people’s lives and industries.
+        </p>
+      </div>
+
+      <!-- Right side (Stats) -->
+      <div class="about-stats">
+        <div class="stat-card">
+          <i class="fas fa-folder-open"></i>
+          <h3 class="counter" data-target="25">0</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-database"></i>
+          <h3 class="counter" data-target="15">0</h3>
+          <p>Technologies Mastered</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-globe"></i>
+          <h3 class="counter" data-target="12">0</h3>
+          <p>AI Projects</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-cogs"></i>
+          <h3 class="counter" data-target="2">0</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-trophy"></i>
+          <h3 class="counter" data-target="5">0</h3>
+          <p>Awards</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-search"></i>
+          <h3 class="counter" data-target="2">0</h3>
+          <p>Research Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counter Animation Script -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    const speed = 70; // lower = faster
+
+    const animateCounters = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = Math.ceil(target / speed);
+
+            if (count < target) {
+              counter.innerText = count + inc;
+              setTimeout(updateCount, 40);
+            } else {
+              counter.innerText = target + "+";
+            }
+          };
+          updateCount();
+          observer.unobserve(counter); // run only once
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(animateCounters, { threshold: 0.5 });
+    counters.forEach(counter => observer.observe(counter));
+  </script>
+</body>
+
+</html>

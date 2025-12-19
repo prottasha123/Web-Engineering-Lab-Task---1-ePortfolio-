@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Research</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* Research Section */
+    .research-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .research-container h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .research-container h1 span {
+      color: #58a6ff;
+    }
+
+    .research-container p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #8b949e;
+    }
+
+    /* Card Design */
+    .card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #21262d;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.1);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .card small {
+      color: #8b949e;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #c9d1d9;
+    }
+
+    .tags {
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #21262d;
+      color: #58a6ff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin: 2px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-footer button {
+      background: #21262d;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #c9d1d9;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .card-footer button:hover {
+      background: #00bcd4;
+      color: #fff;
+    }
+
+    .status {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .published {
+      background: rgba(0, 188, 212, 0.1);
+      color: #00bcd4;
+    }
+
+    .under-review {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+
+    /* Research Interests */
+    .interests {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .interests h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .interest-tag {
+      display: inline-block;
+      background: #21262d;
+      color: #c9d1d9;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    .interest-tag:hover {
+      background: #00bcd4;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html" class="active"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Research Section -->
+  <div class="research-container" id="research">
+    <h1>My <span>Research</span></h1>
+    <p>Contributing to academic knowledge through innovative research in computer science and technology</p>
+
+    <!-- Research Card 1 -->
+    <div class="card">
+      <h2>Machine Learning Approaches for Real-Time Fraud Detection in Financial Transactions</h2>
+      <small>👤 John Doe, Dr. Jane Smith, Prof. Michael Johnson | 📅 2024</small>
+      <p><i>IEEE Transactions on Information Forensics and Security</i><br>
+        This paper presents a novel approach to real-time fraud detection using ensemble machine learning methods,
+        achieving 98.5% accuracy with minimal false positives.</p>
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Fraud Detection</span>
+        <span class="tag">Financial Security</span>
+        <span class="tag">Real-time Processing</span>
+      </div>
+      <div class="card-footer">
+        <button>📄 Read Paper</button>
+        <button>🌐 View Online</button>
+        <span class="status published">Published | 12 citations</span>
+      </div>
+    </div>
+
+    <!-- Research Card 2 -->
+    <div class="card">
+      <h2>Comparative Analysis of Deep Learning Architectures for Image Classification</h2>
+      <small>👤 John Doe, Dr. Sarah Wilson | 📅 2024</small>
+      <p><i>Journal of Computer Vision and Pattern Recognition</i><br>
+        A comprehensive study comparing various CNN architectures including ResNet, EfficientNet, and Vision
+        Transformers on multiple image classification benchmarks.</p>
+      <div class="tags">
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">CNN</span>
+        <span class="tag">Image Classification</span>
+      </div>
+      <div class="card-footer">
+        <button>📄 Read Paper</button>
+        <button>🌐 View Online</button>
+        <span class="status under-review">Under Review</span>
+      </div>
+    </div>
+
+    <!-- Research Card 3 -->
+    <div class="card">
+      <h2>Blockchain-Based Secure Data Sharing Framework for Healthcare Systems</h2>
+      <small>👤 John Doe, Dr. Robert Chen, Dr. Lisa Anderson | 📅 2023</small>
+      <p><i>Conference on Healthcare Informatics (CHI)</i><br>
+        We propose a blockchain-based framework that ensures secure and transparent data sharing among healthcare
+        providers while maintaining patient privacy.</p>
+      <div class="tags">
+        <span class="tag">Blockchain</span>
+        <span class="tag">Healthcare</span>
+        <span class="tag">Data Security</span>
+        <span class="tag">Privacy</span>
+      </div>
+      <div class="card-footer">
+        <button>📄 Read Paper</button>
+        <button>🌐 View Online</button>
+        <span class="status published">Published | 28 citations</span>
+      </div>
+    </div>
+
+    <!-- Research Interests -->
+    <div class="interests">
+      <h2>Research Interests</h2>
+      <span class="interest-tag">Machine Learning & AI</span>
+      <span class="interest-tag">Computer Vision</span>
+      <span class="interest-tag">Natural Language Processing</span>
+      <span class="interest-tag">Cybersecurity</span>
+      <span class="interest-tag">Blockchain Technology</span>
+      <span class="interest-tag">Data Mining</span>
+      <span class="interest-tag">Software Engineering</span>
+      <span class="interest-tag">Human-Computer Interaction</span>
+    </div>
+  </div>
+</body>
+
+</html>

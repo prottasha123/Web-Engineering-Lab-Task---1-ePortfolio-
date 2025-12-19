@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Certifications</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* Section */
+    .certifications-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .certifications-container h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .certifications-container h1 span {
+      color: #58a6ff;
+    }
+
+    .certifications-container p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #8b949e;
+    }
+
+    /* Grid for Certifications */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 20px;
+    }
+
+    /* Card */
+    .card {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #21262d;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: #00bcd4;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.3);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .card small {
+      color: #8b949e;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: #c9d1d9;
+    }
+
+    .tags {
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #21262d;
+      color: #58a6ff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin: 2px;
+    }
+
+    /* Credential Button */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .credential-btn {
+      background: #21262d;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #c9d1d9;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .credential-btn:hover {
+      background: #00bcd4;
+      color: #fff;
+    }
+
+    .status {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .active {
+      background: rgba(0, 188, 212, 0.1);
+      color: #00bcd4;
+    }
+
+    .completed {
+      background: rgba(76, 175, 80, 0.1);
+      color: #4caf50;
+    }
+
+    /* Courses Section */
+    .courses {
+      margin-top: 50px;
+    }
+
+    .courses h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #21262d;
+    }
+
+    .course-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .course-card small {
+      display: block;
+      margin-bottom: 8px;
+      color: #8b949e;
+    }
+
+    .course-card p {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #c9d1d9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html" class="active"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Certifications Section -->
+  <div class="certifications-container" id="certifications">
+    <h1><span>Certifications</span> & Courses</h1>
+    <p>Professional certifications and continuous learning achievements that validate my technical expertise</p>
+
+    <!-- Professional Certifications -->
+    <h2>Professional Certifications</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🏆 AWS Certified Solutions Architect - Professional</h3>
+        <small>Amazon Web Services</small>
+        <p>Advanced certification demonstrating expertise in designing distributed applications and systems on AWS.</p>
+        <div class="tags">
+          <span class="tag">Cloud Architecture</span>
+          <span class="tag">AWS Services</span>
+          <span class="tag">System Design</span>
+          <span class="tag">Security</span>
+        </div>
+        <div class="card-footer">
+          <span class="status active">Active</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Google Cloud Professional Machine Learning Engineer</h3>
+        <small>Google Cloud</small>
+        <p>Professional-level certification for designing and implementing ML solutions using Google Cloud technologies.
+        </p>
+        <div class="tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Google Cloud</span>
+          <span class="tag">MLOps</span>
+        </div>
+        <div class="card-footer">
+          <span class="status active">Active</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Microsoft Azure Developer Associate</h3>
+        <small>Microsoft</small>
+        <p>Demonstrates skills in developing cloud solutions that span storage, security, computing, and more.</p>
+        <div class="tags">
+          <span class="tag">Azure Services</span>
+          <span class="tag">Cloud Development</span>
+          <span class="tag">API Development</span>
+          <span class="tag">DevOps</span>
+        </div>
+        <div class="card-footer">
+          <span class="status active">Active</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Certified Kubernetes Administrator (CKA)</h3>
+        <small>Cloud Native Computing Foundation</small>
+        <p>Hands-on certification that validates skills in Kubernetes administration and troubleshooting.</p>
+        <div class="tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Container Orchestration</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">Linux</span>
+        </div>
+        <div class="card-footer">
+          <span class="status active">Active</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Meta Front-End Developer Professional Certificate</h3>
+        <small>Meta (via Coursera)</small>
+        <p>Comprehensive program covering modern front-end development technologies and best practices.</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">UI/UX Design</span>
+        </div>
+        <div class="card-footer">
+          <span class="status completed">Completed</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Cybersecurity Fundamentals</h3>
+        <small>CompTIA Security+</small>
+        <p>Foundation-level certification covering essential cybersecurity principles and practices.</p>
+        <div class="tags">
+          <span class="tag">Network Security</span>
+          <span class="tag">Risk Management</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Compliance</span>
+        </div>
+        <div class="card-footer">
+          <span class="status active">Active</span>
+          <button class="credential-btn">🔗 Verify Credential</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notable Online Courses -->
+    <div class="courses">
+      <h2>Notable Online Courses</h2>
+      <div class="course-grid">
+        <div class="course-card">
+          <h3>Deep Learning Specialization</h3>
+          <small>DeepLearning.AI (Coursera)</small>
+          <p>✔ Focuses on neural networks, deep learning theory, and applications.<br>
+            Duration: 3 months | Completed: Dec 2023 | Grade: A+</p>
+        </div>
+
+        <div class="course-card">
+          <h3>Full Stack Web Development</h3>
+          <small>The Odin Project</small>
+          <p>✔ Full-stack curriculum with real-world projects.<br>
+            Duration: 6 months | Completed: Oct 2023</p>
+        </div>
+
+        <div class="course-card">
+          <h3>Data Structures and Algorithms</h3>
+          <small>Princeton University (Coursera)</small>
+          <p>✔ Covers fundamental algorithms and data structures.<br>
+            Duration: 4 months | Completed: Aug 2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

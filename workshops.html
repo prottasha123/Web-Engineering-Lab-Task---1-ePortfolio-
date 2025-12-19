@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops & Seminars</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #c9d1d9;
+    }
+
+    /* Navbar */
+    nav {
+      background: #161b22;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #c9d1d9;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+    }
+
+    nav ul li a.active {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    /* Section Header */
+    section {
+      padding: 40px 10%;
+    }
+
+    section h1 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    section h1 span {
+      color: #00bcd4;
+    }
+
+    section p {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 40px;
+    }
+
+    /* Cards */
+    .card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #30363d;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #8b949e;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .meta i {
+      color: #58a6ff;
+      margin-right: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: rgba(88, 166, 255, 0.15);
+      color: #58a6ff;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .badge {
+      float: right;
+      background: #00bcd4;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+
+    /* Grid for presentations */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+      <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+      <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+      <li><a href="workshops.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+      <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Workshops Section -->
+  <section id="workshops">
+    <h1>Workshops & <span>Seminars</span></h1>
+    <p>Continuous learning through professional workshops, seminars, and knowledge sharing events</p>
+
+    <h2>Workshops & Seminars Attended</h2>
+
+    <div class="card">
+      <h3>Advanced React Patterns and Performance Optimization
+        <span class="badge">Workshop</span>
+        <span class="badge">Certified</span>
+      </h3>
+      <p>Intensive workshop covering advanced React patterns, optimization techniques, and modern practices.</p>
+      <div class="meta">
+        <span><i class="fas fa-calendar"></i> March 15-16, 2024</span>
+        <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+        <span><i class="fas fa-clock"></i> 2 days</span>
+        <span><i class="fas fa-users"></i> 50 attendees</span>
+      </div>
+      <div class="tags">
+        <span class="tag">React Hooks</span>
+        <span class="tag">Performance Optimization</span>
+        <span class="tag">State Management</span>
+        <span class="tag">Testing Strategies</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Machine Learning in Production: MLOps Best Practices
+        <span class="badge">Seminar</span>
+        <span class="badge">Certified</span>
+      </h3>
+      <p>Comprehensive seminar on deploying and managing machine learning models in production.</p>
+      <div class="meta">
+        <span><i class="fas fa-calendar"></i> February 20, 2024</span>
+        <span><i class="fas fa-video"></i> Virtual Event</span>
+        <span><i class="fas fa-clock"></i> 6 hours</span>
+        <span><i class="fas fa-users"></i> 200 attendees</span>
+      </div>
+      <div class="tags">
+        <span class="tag">MLOps</span>
+        <span class="tag">Model Deployment</span>
+        <span class="tag">Monitoring</span>
+        <span class="tag">CI/CD for ML</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Cybersecurity for Developers: Secure Coding Practices
+        <span class="badge">Workshop</span>
+        <span class="badge">Certified</span>
+      </h3>
+      <p>Hands-on workshop focusing on secure coding practices and vulnerability prevention.</p>
+      <div class="meta">
+        <span><i class="fas fa-calendar"></i> January 10, 2024</span>
+        <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+        <span><i class="fas fa-clock"></i> 1 day</span>
+        <span><i class="fas fa-users"></i> 75 attendees</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Secure Coding</span>
+        <span class="tag">OWASP Top 10</span>
+        <span class="tag">Penetration Testing</span>
+        <span class="tag">Security Audits</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Blockchain Development and Smart Contracts
+        <span class="badge">Workshop</span>
+        <span class="badge">Certified</span>
+      </h3>
+      <p>Deep dive into blockchain technology, smart contract development, and decentralized applications.</p>
+      <div class="meta">
+        <span><i class="fas fa-calendar"></i> December 5, 2023</span>
+        <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
+        <span><i class="fas fa-clock"></i> 2 days</span>
+        <span><i class="fas fa-users"></i> 40 attendees</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Solidity</span>
+        <span class="tag">Smart Contracts</span>
+        <span class="tag">Web3</span>
+        <span class="tag">Dapp Development</span>
+      </div>
+    </div>
+
+    <h2 style="margin-top:40px;">Presentations & Talks Given</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Introduction to Modern Web Development
+          <span class="badge">Presentation</span>
+        </h3>
+        <p>Presented an overview of modern web development technologies and career opportunities for students.</p>
+        <div class="meta">
+          <span><i class="fas fa-calendar"></i> April 8, 2024</span>
+          <span><i class="fas fa-map-marker-alt"></i> University Campus</span>
+          <span><i class="fas fa-clock"></i> 45 minutes</span>
+          <span><i class="fas fa-users"></i> 120 attendees</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Web Technologies</span>
+          <span class="tag">Career Guidance</span>
+          <span class="tag">Industry Trends</span>
+          <span class="tag">Best Practices</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI and Ethics: Responsible Development Practices
+          <span class="badge">Lightning Talk</span>
+        </h3>
+        <p>Discussed the importance of ethical considerations in AI development and implementation.</p>
+        <div class="meta">
+          <span><i class="fas fa-calendar"></i> November 15, 2023</span>
+          <span><i class="fas fa-video"></i> Virtual Conference</span>
+          <span><i class="fas fa-clock"></i> 30 minutes</span>
+          <span><i class="fas fa-users"></i> 80 attendees</span>
+        </div>
+        <div class="tags">
+          <span class="tag">AI Ethics</span>
+          <span class="tag">Responsible Development</span>
+          <span class="tag">Bias in AI</span>
+          <span class="tag">Social Impact</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

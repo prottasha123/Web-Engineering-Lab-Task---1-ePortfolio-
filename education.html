@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Education</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1117;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background: #161b22;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #21262d;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #c9d1d9;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: rgba(88, 166, 255, 0.1);
+            color: #58a6ff;
+        }
+
+        nav ul li a.active {
+            background: #00bcd4;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+        }
+
+        nav ul li a i {
+            font-size: 16px;
+        }
+
+        /* Education Section */
+        .education-section {
+            max-width: 1200px;
+            /* Increased from 1000px */
+            margin: 10px auto;
+            padding: 40px;
+        }
+
+        .education-section h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .education-section h1 span {
+            color: #00bcd4;
+        }
+
+        .education-section p.subtitle {
+            text-align: center;
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .edu-card {
+            background: #161b22;
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 50px;
+            /* Added a bit more padding */
+            margin-bottom: 50px;
+            width: 100%;
+            /* Card takes full width of container */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+
+        .edu-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .edu-header i {
+            font-size: 1.6rem;
+            margin-right: 10px;
+            color: #00bcd4;
+        }
+
+        .edu-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .status {
+            font-size: 0.8rem;
+            background: #00bcd4;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .edu-institute {
+            font-size: 1.1rem;
+            color: #58a6ff;
+            margin-bottom: 10px;
+        }
+
+        .edu-meta {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: #8b949e;
+        }
+
+        .edu-meta i {
+            margin-right: 6px;
+            color: #00bcd4;
+        }
+
+        .edu-desc {
+            margin-bottom: 15px;
+        }
+
+        .coursework,
+        .achievements {
+            margin-bottom: 15px;
+        }
+
+        .coursework h4,
+        .achievements h4 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tags span {
+            background: #21262d;
+            color: #58a6ff;
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="education.html" class="active"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+            <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+            <li><a href="certifications.html"><i class="fas fa-medal"></i> Certifications</a></li>
+            <li><a href="workshops.html"><i class="fas fa-chalkboard-teacher"></i> Workshops</a></li>
+            <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <h1>My <span>Education</span></h1>
+        <p class="subtitle">Academic journey and continuous learning in computer science and technology</p>
+
+        <!-- Bachelor -->
+        <div class="edu-card">
+            <div class="edu-header">
+                <i class="fas fa-user-graduate"></i>
+                <span class="edu-title">Bachelor of Science in Computer Science & Engineering</span>
+                <span class="status">Final Year</span>
+            </div>
+            <div class="edu-institute">Daffodil International University</div>
+            <div class="edu-meta">
+                <i class="fas fa-calendar-alt"></i> 2022 - 2026 (June) &nbsp; | &nbsp;
+                <i class="fas fa-map-marker-alt"></i>Daffodil Smart City (DSC), Birulia, Savar, Dhaka-1216 &nbsp; |
+                &nbsp;
+                <i class="fas fa-star"></i> GPA: 3.92/4.0
+            </div>
+            <p class="edu-desc">
+                "Learning AI Engineer with expertise in software engineering and machine learning,
+                specializing in building scalable full-stack applications and deploying intelligent
+                systems powered by deep learning and data-driven solutions."
+            </p>
+            <div class="coursework">
+                <h3>Relevant Courses :</h3>
+                
+                <div class="tags">
+                    <span>Programming Languages</span>
+                    <span>Data Structures & Algorithms</span>
+                    <span>Machine Learning</span>
+                    <span>Database Systems</span>
+                    <span>Software Engineering</span>
+                    <span>Artificial Intelligence</span>
+                    <span>Data Science</span>
+                    <span>Web Development</span>
+                    <span>Computer Networks</span>
+                    <span>Software Projects</span>
+                    <span>Discrete Mathematics</span>
+                    <span>Calculus, Complex Variables and Linear Algebra</span>
+                    <span>Engineering Mathematics</span>
+                    <span>Numerical Methods</span>
+                    <span>Statistics and Probability</span>
+                    <span>Basic Mathematics</span>
+                    <span>Operating Systems</span>
+                    <span>Computer Architecture</span>
+                    <span>Data Communication</span>
+                    <span>System Analysis & Design</span>
+                    <span>Digital Electronics</span>
+                    <span>Embedded Systems and IoT</span>
+                    <span>Electrical Circuits</span>
+                    <span>Basic Electronics</span>
+                </div>
+            </div>
+            <div class="achievements">
+                <h2>Achievements:</h2>
+                <ul>
+                    <li>Top 1% Students in the Department</li>
+                    <li>Departmental Rank: 6th</li>
+                    <li>Section Rank: 1st</li>
+                    <li>Merit Scholarship</li>
+                    <li>Excellent Academic Performance Scholarship</li>
+                    <li>Dean's List (2022, 2023)</li>
+                    <li>Best Library User Awards(2023,2024,2025)</li>
+                    <li>Outstanding Academic Performance</li>
+                    <li>Outstanding Student in Data Science, ML & AI coursework</li>
+                    <li>Active Member of the ML & NLP Research Lab</li>
+                    <li>Member of the Programming Club</li>
+                    <li>Completed ISP-2025 in Mexico course of Business Intelligence</li>
+                    <li>Volunteer in Treasure Office</li>
+                    <li>Published 2 Research Papers</li>
+                    <li>Good Presentation Skills</li>
+                    <li>Excellent Team Collaboration</li>
+                    <li>Mentor for Junior Students</li>
+                    <li>Organized Tech Workshops and Seminars</li>
+                    <li>Participated in Algorithms and Coding Competitions</li>
+                    <li>Contributed to Open Source Projects</li>
+                    <li>Achievements in IBM Competitions</li>
+                    <li>Completed Online Courses in ML, DL , AI & Data Science</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- High School -->
+        <div class="edu-card">
+            <div class="edu-header">
+                <i class="fas fa-school"></i>
+                <span class="edu-title">Higher Secondary Certifications (HSC)</span>
+                <span class="status">Graduated</span>
+            </div>
+            <div class="edu-institute">Savar Government College</div>
+            <div class="edu-meta">
+                <i class="fas fa-calendar-alt"></i> 2019 - 2021 &nbsp; | &nbsp;
+                <i class="fas fa-map-marker-alt"></i> Savar, Dhaka-1216 &nbsp; | &nbsp;
+                <i class="fas fa-star"></i> GPA: 5.00/5.00
+            </div>
+            <p class="edu-desc">
+                "I am a STEM graduate with a strong foundation in science and mathematics,
+                and early exposure to computer science and programming."
+            </p>
+            <div class="coursework">
+                <h4>Relevant Coursework:</h4>
+                <div class="tags">
+                    <span>AP Computer Science</span>
+                    <span>AP Mathematics</span>
+                    <span>AP Physics</span>
+                    <span>Advanced Chemistry</span>
+                    <span>Technical Writing</span>
+                </div>
+            </div>
+            <div class="achievements">
+                <h4>Achievements:</h4>
+                <ul>
+                    <li>Top 1% Students in the Department</li>
+                    <li>Outstanding Academic Performance</li>
+                    <li>Science Olympiad Participant</li>
+                    <li>Math Club Member</li>
+                    <li>Science Fair Participant</li>
+                    <li>Volunteer Tutor for Peer Students</li>
+                    <li>Participated in Inter-School Competitions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
